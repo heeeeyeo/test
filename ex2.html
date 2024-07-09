@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red {
+            outline: red solid 1px;
+        }
+
+        .red:focus {
+            outline: red solid 1px;
+        }
+    </style>
+    <script>
+        function countCharacters() {
+            var textBox = document.getElementById('text');
+            // console.log(textBox.value);
+            var typedText = textBox.value;
+
+            var charCount = typedText.length;
+
+            var info = document.getElementById('spanTag');
+
+            if (charCount < 10) {
+                textBox.style.outline = 'none'; // Set border color of textBox
+                // textBox.classList.remove('red');
+                info.textContent = `${charCount}글자`
+            } else {
+                textBox.style.outline = '1px solid red'; // Set border color of textBox
+                info.textContent = `10글자 이상입니다`
+                // textBox.classList.add('red');
+            }
+            console.log(charCount);
+
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" id="text" oninput="countCharacters()"><span id="spanTag"></span>
+
+</body>
+
+</html>

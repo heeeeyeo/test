@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+          text-align: center;
+          padding: 50px;
+          transition: background-color 0.3s ease;
+        }
+        button {
+          padding: 10px 20px;
+          font-size: 16px;
+          cursor: pointer;
+        }
+      </style>
+      <script>
+        function changeBackgroundColor() {
+          // Generate a random color
+          var randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+          // Apply the random color to the body background
+          document.body.style.backgroundColor = randomColor;
+        }
+      </script>
+</head>
+<body>
+    <button onclick="changeBackgroundColor()">배경색 바꾸기</button>
+</body>
+</html>

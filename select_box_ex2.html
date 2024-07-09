@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    img {
+        width: 50%
+    }
+</style>
+<script>
+    window.onload = function () {
+        let sel = document.querySelector('#sel');
+        
+        
+    }
+    function getSelectedValue() {
+        // 선택된 옵션을 가진 <select> 요소 가져오기
+        var selectElement = document.getElementById("mySelect");
+
+        // 선택된 옵션의 value 값 가져오기
+        var selectedValue = selectElement.value;
+        var options = selectElement.options;
+
+        // 선택된 옵션과 비교하여 선택되지 않은 옵션 찾기
+
+        var notSelectedOptions = [];
+        for (var i = 0; i < options.length; i++) {
+            if (options[i].value !== selectedValue) {
+                var notSelectedOption = document.getElementById(options[i].value);
+                notSelectedOption.style.display = "none";
+            }
+        }
+        var findImgTag = document.getElementById(selectedValue);
+        findImgTag.style.display = "";
+        console.log(selectedValue);
+    }
+</script>
+
+<body>
+    <select name="" id="mySelect" onchange="getSelectedValue()">
+        <option value="img1">1</option>
+        <option value="img2">2</option>
+        <option value="img3">3</option>
+    </select>
+    <br>
+    <img src="SourceTreeInstall_1.PNG" id="img1" alt="" style="display: none;">
+    <img src="SourceTreeInstall_2.PNG" id="img2" alt="" style="display: none;">
+    <img src="SourceTreeInstall_3.PNG" id="img3" alt="" style="display: none;">
+</body>
+
+</html>
